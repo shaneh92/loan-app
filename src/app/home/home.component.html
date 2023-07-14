@@ -1,0 +1,107 @@
+<!--
+    ========================================================================================================================
+    ; Title: home.component.ts
+    ; Author: Shane Hingtgen
+    ; Bellevue University
+    ; Date: 6/27/23
+    ; Description: This purpose of this assignment is create new layouts with angular materials and flex layouts
+    ; Work Cited:
+    Coding Guidelines
+    Instructions - Exercise 6.3 Layouts
+    Instruction - Assignment 6.4 Input Properties
+    Instruction - Exercise 7.3 Form Validation
+    Angular Tutorial video https://www.youtube.com/watch?v=9AsogopS9YM
+    Course GitHub
+    ========================================================================================================================
+-->
+<mat-card-title
+  class="font-white"
+  style="text-align: center; padding-bottom: 20px"
+>
+  Welcome to the Loan Application!
+</mat-card-title>
+<div fxLayout="row wrap" fxLayoutGap="20px" class="background-blue">
+  <div fxFlex class="grade-form">
+    <mat-card class="background-blue font-white">
+      <mat-card-title>Loan Amount:</mat-card-title>
+      <mat-card-content>
+        <form
+          fxLayout="column"
+          fxLayoutGap="16px"
+          [formGroup]="transcriptForm"
+          (ngSubmit)="onSubmit($event); transcriptForm.reset()"
+        >
+          <mat-form-field>
+            <mat-label>Loan Amount</mat-label>
+            <input
+              type="text"
+              name="txtAmount"
+              required
+              id="txtAmount"
+              matInput
+              formControlName="amount"
+            />
+          </mat-form-field>
+          <mat-card-title>Interest Rate:</mat-card-title>
+          <mat-form-field>
+            <mat-label>ex: 4.5</mat-label>
+            <input
+              type="text"
+              name="txtRate"
+              required
+              id="txtRate"
+              matInput
+              formControlName="rate"
+            />
+          </mat-form-field>
+          <mat-card-title>Number of Years:</mat-card-title>
+          <mat-form-field>
+            <mat-label>Years</mat-label>
+            <input
+              type="text"
+              name="txtYears"
+              required
+              id="txtYears"
+              matInput
+              formControlName="years"
+            />
+          </mat-form-field>
+          <!-- this button saves the course and grade to transcript -->
+          <button
+            mat-raised-button
+            class="btn-brown"
+            type="submit"
+            [disabled]="!transcriptForm.valid"
+          >
+            Submit
+          </button>
+          <button mat-button (click)="clearEntries()">Clear Form</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div fxFlex class="grade-summary">
+    <!-- this button clears the loan formt -->
+    <mat-card>
+      <mat-card-title style="font-size: 48px"
+        >Your Monthly Payment</mat-card-title
+      >
+      <mat-card-content>
+        <app-grade-summary
+          *ngFor="let entry of transcriptEntries"
+          [course]="entry.course"
+          [grade]="entry.grade"
+        ></app-grade-summary>
+      </mat-card-content>
+      <mat-card-title style="font-size: 48px">Interest Paid</mat-card-title>
+      <mat-card-content>
+        <app-grade-summary
+          *ngFor="let entry of transcriptEntries"
+          [course]="entry.course"
+          [grade]="entry.grade"
+        ></app-grade-summary>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
