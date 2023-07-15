@@ -20,85 +20,87 @@
 >
   Welcome to the Loan Application!
 </mat-card-title>
-<div fxLayout="column wrap" fxLayoutGap="20px" class="form-entry">
+<div fxLayout="row" fxLayoutGap="10" class="form-entry" style="font-size: 48px">
   <!-- An input form -->
-
-  <div fxFlex class="loan-form">
-    <div fxLayout="row">
-      <mat-card class="form-entry font-white">
-        <!-- loan amount -->
-        <mat-card-title>Loan Amount:</mat-card-title>
-        <mat-card-content>
-          <form fxLayout="column" fxLayoutGap="16px">
-            <mat-form-field fxFlex appearance="fill">
-              <mat-label>Loan Amount</mat-label>
-              <input
-                type="text"
-                name="txtAmount"
-                required
-                id="txtAmount"
-                matInput
-                formControlName="amount"
-              />
-            </mat-form-field>
-            <!-- interest rate -->
-            <mat-card-title>Interest Rate:</mat-card-title>
-            <mat-form-field fxFlex appearance="fill">
-              <mat-label>ex: 4.5</mat-label>
-              <input
-                type="text"
-                name="txtRate"
-                required
-                id="txtRate"
-                matInput
-                formControlName="rate"
-              />
-            </mat-form-field>
-            <!-- numbOfYears input -->
-            <mat-card-title>Number of Years:</mat-card-title>
-            <mat-form-field fxFlex appearance="fill">
-              <mat-label>Years</mat-label>
-              <input
-                type="text"
-                name="txtYears"
-                required
-                id="txtYears"
-                matInput
-                formControlName="years"
-              />
-            </mat-form-field>
-            <!-- Button to calculate results -->
-            <button
-              mat-raised-button
-              class="btn-brown"
-              type="submit"
-              [disabled]=""
-            >
-              Submit
-            </button>
-            <!-- this button clears the loan form -->
-            <button mat-button (click)="clearEntries()">Clear Form</button>
-          </form>
-        </mat-card-content>
-      </mat-card>
-    </div>
+  <div fxFlex="50%" class="loan-form">
+    <mat-card class="form-entry font-white mat-elevation-z0">
+      <!-- loan amount -->
+      <mat-card-title>Loan Amount:</mat-card-title>
+      <mat-card-content>
+        <form>
+          <mat-form-field style="width: 500px">
+            <mat-label>Loan Amount</mat-label>
+            <input
+              type="text"
+              name="txtAmount"
+              required
+              id="txtAmount"
+              matInput
+              formControlName="amount"
+            />
+          </mat-form-field>
+          <!-- interest rate -->
+          <mat-card-title>Interest Rate:</mat-card-title>
+          <mat-form-field style="width: 500px">
+            <mat-label>ex: 4.5</mat-label>
+            <input
+              type="text"
+              name="txtRate"
+              required
+              id="txtRate"
+              matInput
+              formControlName="rate"
+            />
+          </mat-form-field>
+          <!-- numbOfYears input -->
+          <mat-card-title>Number of Years:</mat-card-title>
+          <mat-form-field style="width: 500px">
+            <mat-label>Years</mat-label>
+            <input
+              type="text"
+              name="txtYears"
+              required
+              id="txtYears"
+              matInput
+              formControlName="years"
+            />
+          </mat-form-field>
+          <br />
+          <br />
+          <!-- Button to calculate results -->
+          <button
+            mat-raised-button
+            class="btn-brown"
+            type="submit"
+            [disabled]=""
+            style="width: 500px"
+          >
+            Submit
+          </button>
+          <br />
+          <br />
+          <!-- this button clears the loan form -->
+          <button style="width: 500px" mat-button (click)="clearEntries()">
+            Clear Form
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
   </div>
 
   <!-- Results -->
-  <div fxFlex class="loan-summary">
-    <div fxLayout="row" fxLaoutGap="20px">
-      <mat-card class="form-entry font-white">
-        <mat-card-content>
-          <!-- monthly payment displays -->
-          <app-payment style="font-size: 48px"> </app-payment>
-        </mat-card-content>
-        <br />
-        <br />
-        <mat-card-content>
-          <!-- interest paid displays -->
-          <app-interest style="font-size: 48px"> </app-interest>
-        </mat-card-content>
-      </mat-card>
-    </div>
+  <div fxFlex="50%" class="loan-summary mat-elevation-z0">
+    <mat-card class="form-entry font-white mat-elevation-z0">
+      <mat-card-content>
+        <!-- monthly payment displays -->
+        <app-payment style="font-size: 48px"> </app-payment>
+      </mat-card-content>
+      <br />
+      <br />
+      <mat-card-content>
+        <!-- interest paid displays -->
+        <app-interest style="font-size: 48px"> </app-interest>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>
