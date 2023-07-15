@@ -3,9 +3,8 @@
     ; Title: app.module.ts
     ; Author: Shane Hingtgen
     ; Bellevue University
-    ; Date: 6/27/23
-    ; Description: This purpose of this assignment is create new layouts with angular materials and flex layouts
-    ; Work Cited:
+    ; Date: 7/14/23
+    ; Description: Capstone
     Coding Guidelines
     Instructions - Exercise 6.3 Layouts
     Instruction - Exercise 7.2 Reactive Forms
@@ -21,8 +20,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
-import { BaseLayoutComponent } from './base-layout/base-layout.component';
+
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 
@@ -30,33 +28,30 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { GpaComponent } from './gpa/gpa.component';
-import { GradeSummaryComponent } from './grade-summary/grade-summary.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 
 import { MatSelectModule } from '@angular/material/select';
-import { SignInComponent } from './sign-in/sign-in.component';
+
 import { CookieService } from 'ngx-cookie-service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { MatIconModule } from '@angular/material/icon';
+import { PaymentComponent } from './payment/payment.component';
+import { InterestComponent } from './interest/interest.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthLayoutComponent,
-    BaseLayoutComponent,
     NotFoundComponent,
     HomeComponent,
-    GpaComponent,
-    GradeSummaryComponent,
-    SignInComponent,
     AboutComponent,
     ContactComponent,
+    PaymentComponent,
+    InterestComponent,
   ],
   imports: [
     BrowserModule,

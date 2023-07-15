@@ -1,4 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+/*    ========================================================================================================================
+    ; Title: styles.scss
+    ; Author: Shane Hingtgen
+    ; Bellevue University
+    ; Date: 7/14/23
+    ; Description: Capstone
+    ; Work Cited:
+    Coding Guidelines
+    Instructions - Exercise 6.3 Layouts
+    Instruction - Exercise 7.2 Reactive Forms
+    Angular Tutorial video https://www.youtube.com/watch?v=9AsogopS9YM
+    Angular Tutorial video https://www.youtube.com/watch?v=OFBL4bKno_s
+    Course GitHub
+    ========================================================================================================================
+ */
 
 html,
 body {
@@ -31,7 +45,8 @@ body {
 
 .btn-brown {
   background-color: #946b2d;
-  columns: white;
+  color: white;
+  font-size: 22px;
 }
 
 input[type="text"],
@@ -41,4 +56,10 @@ textarea {
 }
 mat-label {
   color: white;
+}
+
+.form-entry {
+  background-color: #0f1d4a;
+  color: white;
+  width: 800px;
 }
