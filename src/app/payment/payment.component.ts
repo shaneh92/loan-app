@@ -12,7 +12,7 @@
     ========================================================================================================================
  */
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-payment',
@@ -20,6 +20,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payment.component.scss'],
 })
 export class PaymentComponent implements OnInit {
+  @Input() payment: number;
   constructor() {}
 
   ngOnInit(): void {}

@@ -19,7 +19,18 @@
   style="text-align: center; padding-bottom: 20px"
 >
   Welcome to the Loan Application!
+
+  <!-- error messages -->
+  <!-- loan amount comma error -->
+  <div *ngIf="form.amount.errors && form.amount.touched">
+    <div class="error-message">Loan Amount cannot have commas!</div>
+  </div>
+  <!-- loan amount whole number years error -->
+  <div *ngIf="form.years.errors && form.amount.touched">
+    <div class="error-message">Years must be a whole number!</div>
+  </div>
 </mat-card-title>
+
 <div fxLayout="row" fxLayoutGap="10" class="form-entry" style="font-size: 48px">
   <!-- An input form -->
   <div fxFlex="50%" class="loan-form">
@@ -27,14 +38,15 @@
       <!-- loan amount -->
       <mat-card-title>Loan Amount:</mat-card-title>
       <mat-card-content>
-        <form>
+        <!-- set formGroup to loanData -->
+        <form [formGroup]="loanData">
           <mat-form-field style="width: 500px">
-            <mat-label>Loan Amount</mat-label>
+            <mat-label>Loan Amount Ex: 5316.22</mat-label>
             <input
               type="text"
-              name="txtAmount"
+              name="amount"
               required
-              id="txtAmount"
+              id="amount"
               matInput
               formControlName="amount"
             />
@@ -45,11 +57,11 @@
             <mat-label>ex: 4.5</mat-label>
             <input
               type="text"
-              name="txtRate"
+              name="interest"
               required
-              id="txtRate"
+              id="interest"
               matInput
-              formControlName="rate"
+              formControlName="interest"
             />
           </mat-form-field>
           <!-- numbOfYears input -->
@@ -58,9 +70,9 @@
             <mat-label>Years</mat-label>
             <input
               type="text"
-              name="txtYears"
+              name="years"
               required
-              id="txtYears"
+              id="years"
               matInput
               formControlName="years"
             />
@@ -72,8 +84,9 @@
             mat-raised-button
             class="btn-brown"
             type="submit"
-            [disabled]=""
+            [disabled]="!loanData.valid"
             style="width: 500px"
+            (click)="calcResults()"
           >
             Submit
           </button>
@@ -93,13 +106,14 @@
     <mat-card class="form-entry font-white mat-elevation-z0">
       <mat-card-content>
         <!-- monthly payment displays -->
-        <app-payment style="font-size: 48px"> </app-payment>
+        <app-payment [payment]="payment" style="font-size: 48px"> </app-payment>
       </mat-card-content>
       <br />
       <br />
       <mat-card-content>
         <!-- interest paid displays -->
-        <app-interest style="font-size: 48px"> </app-interest>
+        <app-interest [interest]="interest" style="font-size: 48px">
+        </app-interest>
       </mat-card-content>
     </mat-card>
   </div>

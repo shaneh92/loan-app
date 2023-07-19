@@ -23,6 +23,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 
+// routes for each app page, even a 404 error page
 const routes: Routes = [
   {
     path: '',

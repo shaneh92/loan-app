@@ -14,6 +14,7 @@
 -->
 <mat-toolbar class="toolbar">
   <mat-toolbar-row>
+    <!-- a logo for the top right Curtesy of https://www.pngmart.com/image/181069  -->
     <div class="logo">
       <img
         src="./assets/Ravenclaw-House-PNG-Transparent-Image.png"
@@ -21,6 +22,7 @@
         alt="House Ravenclaw"
       />
     </div>
+    <!-- navigation menu -->
     <div style="width: 80%">
       <div fxLayout="row wrap" fxLayoutAlign="end start">
         <button mat-button routerLink="/home">Home</button>
@@ -42,7 +44,7 @@
 
       <br />
       <br />
-
+      <!-- our home page stuff from mat-card found on home.component -->
       <mat-card-content>
         <router-outlet></router-outlet>
       </mat-card-content>
